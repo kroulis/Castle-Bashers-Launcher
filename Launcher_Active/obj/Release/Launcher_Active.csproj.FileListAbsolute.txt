@@ -1,0 +1,6 @@
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Launcher_Active\bin\Release\Launcher_Active.dll
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Launcher_Active\bin\Release\Launcher_Active.pdb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Launcher_Active\obj\Release\Launcher_Active.dll
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Launcher_Active\obj\Release\Launcher_Active.pdb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Launcher_Active\bin\Release\Launcher_Active.tlb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Launcher_Active\obj\Release\Launcher_Active.csprojResolveAssemblyReference.cache

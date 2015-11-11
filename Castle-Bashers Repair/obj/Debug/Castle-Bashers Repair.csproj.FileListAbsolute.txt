@@ -1,0 +1,9 @@
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\bin\Debug\Castle-Bashers Repair.exe.config
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\bin\Debug\Castle-Bashers Repair.exe
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\bin\Debug\Castle-Bashers Repair.pdb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\obj\Debug\Castle-Bashers Repair.csprojResolveAssemblyReference.cache
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\obj\Debug\Castle_Bashers_Repair.Form1.resources
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\obj\Debug\Castle_Bashers_Repair.Properties.Resources.resources
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\obj\Debug\Castle-Bashers Repair.csproj.GenerateResource.Cache
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\obj\Debug\Castle-Bashers Repair.exe
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Repair\obj\Debug\Castle-Bashers Repair.pdb

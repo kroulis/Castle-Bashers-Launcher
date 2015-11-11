@@ -1,0 +1,14 @@
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\bin\Debug\Castle-Bashers Launcher.exe.config
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\bin\Debug\Castle-Bashers Launcher.exe
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\bin\Debug\Castle-Bashers Launcher.pdb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle-Bashers Launcher.csprojResolveAssemblyReference.cache
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle_Bashers_Launcher.Properties.Resources.resources
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle-Bashers Launcher.csproj.GenerateResource.Cache
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle-Bashers Launcher.exe
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle-Bashers Launcher.pdb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle_Bashers_Launcher.Main.resources
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\bin\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Interop.ShockwaveFlashObjects.dll
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Launcher\obj\Debug\Castle-Bashers Launcher.csproj.ResolveComReference.cache
