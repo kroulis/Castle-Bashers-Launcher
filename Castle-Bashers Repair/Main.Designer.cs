@@ -39,8 +39,10 @@
             // 
             // currentp
             // 
-            resources.ApplyResources(this.currentp, "currentp");
+            this.currentp.Location = new System.Drawing.Point(6, 584);
             this.currentp.Name = "currentp";
+            this.currentp.Size = new System.Drawing.Size(617, 23);
+            this.currentp.TabIndex = 0;
             // 
             // process1
             // 
@@ -54,34 +56,52 @@
             // 
             // entirep
             // 
-            resources.ApplyResources(this.entirep, "entirep");
+            this.entirep.Location = new System.Drawing.Point(6, 626);
             this.entirep.Name = "entirep";
+            this.entirep.Size = new System.Drawing.Size(617, 23);
+            this.entirep.TabIndex = 1;
             // 
             // PText
             // 
-            resources.ApplyResources(this.PText, "PText");
+            this.PText.AutoSize = true;
             this.PText.BackColor = System.Drawing.Color.Transparent;
             this.PText.ForeColor = System.Drawing.Color.Lime;
+            this.PText.Location = new System.Drawing.Point(2, 550);
             this.PText.Name = "PText";
+            this.PText.Size = new System.Drawing.Size(127, 20);
+            this.PText.TabIndex = 2;
+            this.PText.Text = "Wait for Repair...";
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.button1.Location = new System.Drawing.Point(151, 155);
             this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(336, 86);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Start To Repair";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            resources.ApplyResources(this.button2, "button2");
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button2.Location = new System.Drawing.Point(148, 315);
             this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(336, 86);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Quit the program";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Main
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(632, 717);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PText);
@@ -90,6 +110,11 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Castal-Bashers Repair";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Main_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Main_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Main_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

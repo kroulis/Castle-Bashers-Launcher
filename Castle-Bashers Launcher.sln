@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher_Active", "Launcher
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle-Bashers Repair", "Castle-Bashers Repair\Castle-Bashers Repair.csproj", "{A491CDEC-B12D-4D9A-ABA5-99D9D5430773}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle-Bashers Bug Report", "Castle-Bashers Bug Report\Castle-Bashers Bug Report.csproj", "{1035C549-ADF1-48A2-9FEA-BDC13B740D62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A491CDEC-B12D-4D9A-ABA5-99D9D5430773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A491CDEC-B12D-4D9A-ABA5-99D9D5430773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A491CDEC-B12D-4D9A-ABA5-99D9D5430773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1035C549-ADF1-48A2-9FEA-BDC13B740D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1035C549-ADF1-48A2-9FEA-BDC13B740D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1035C549-ADF1-48A2-9FEA-BDC13B740D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1035C549-ADF1-48A2-9FEA-BDC13B740D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
