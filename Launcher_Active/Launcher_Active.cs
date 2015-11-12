@@ -28,6 +28,7 @@ namespace Launcher_Active
     [ClassInterface(ClassInterfaceType.None)]
     public class Launcher : ILauncher
     {
+        private string path = System.AppDomain.CurrentDomain.BaseDirectory;
         public bool WriteConfig(int solution,int full_screen)
         {
             XmlDocument Config = new XmlDocument();
@@ -52,8 +53,8 @@ namespace Launcher_Active
             XmlNode savefile = Config.CreateElement("savefile");
             savefile.InnerText = "null";
             root.AppendChild(savefile);
-            Config.Save(Directory.GetCurrentDirectory() + "/config.xml");
-            if(File.Exists(Directory.GetCurrentDirectory() + "/config.xml"))
+            Config.Save(path + "config.xml");
+            if(File.Exists(path + "config.xml"))
             {
                 return true;
             }
@@ -64,10 +65,10 @@ namespace Launcher_Active
         }
         public bool ChangeConfig(int solution,int full_screen)
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
+            if (File.Exists(path + "config.xml") == false)
                 return false;
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -82,15 +83,15 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Save(path + "config.xml");
             return true;
         }
         public string GetSolution()
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
-                return "Load:" + Directory.GetCurrentDirectory() + "/config.xml failed.";
+            if (File.Exists(path + "config.xml") == false)
+                return "Load:" + path + "config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -104,10 +105,10 @@ namespace Launcher_Active
 
         public string GetFullScreenMode()
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
-                return "Load:" + Directory.GetCurrentDirectory() + "/config.xml failed.";
+            if (File.Exists(path + "config.xml") == false)
+                return "Load:" + path + "config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -121,10 +122,10 @@ namespace Launcher_Active
 
         public string GetPlayerID()
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
-                return "Load:" + Directory.GetCurrentDirectory() + "/config.xml failed.";
+            if (File.Exists(path + "config.xml") == false)
+                return "Load:" + path + "config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -197,18 +198,18 @@ namespace Launcher_Active
             //player2 (ignore)
 
             //save file to a temporary place
-            character_data.Save(Directory.GetCurrentDirectory() + "/saving.xml");
+            character_data.Save(path + "saving.xml");
             //encrypt
             string md5;
-            md5 = FileVerify.getFileHash(Directory.GetCurrentDirectory() + "/saving.xml");
-            File.Move(Directory.GetCurrentDirectory() + "/saving.xml", Directory.GetCurrentDirectory() + "/CB" + md5 + "D.xml");
-            if (File.Exists(Directory.GetCurrentDirectory() + "/saving.xml"))
+            md5 = FileVerify.getFileHash(path + "saving.xml");
+            File.Move(path + "saving.xml", path + "CB" + md5 + "D.xml");
+            if (File.Exists(path + "saving.xml"))
             {
-                File.Delete(Directory.GetCurrentDirectory() + "/saving.xml");
+                File.Delete(path + "saving.xml");
             }
             //Change File Infomation
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNode config = Config.SelectSingleNode("config");
             XmlNodeList findresult = config.ChildNodes;
             foreach (XmlElement xl in findresult)
@@ -225,19 +226,19 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Save(path + "config.xml");
 
 
         }
 
         public bool ImportData(int solution, int full_screen,string player_id,string filename)
         {
-            if(File.Exists(Directory.GetCurrentDirectory() + "/"+filename)==false)
+            if(File.Exists(path + ""+filename)==false)
                 return false;
             XmlDocument Config = new XmlDocument();
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
+            if (File.Exists(path + "config.xml") == false)
                 WriteConfig(solution, full_screen);
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -252,16 +253,16 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Save(path + "config.xml");
             return true;
         }
 
         public bool CheckDataExist()
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
+            if (File.Exists(path + "config.xml") == false)
                 return false;
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -269,7 +270,7 @@ namespace Launcher_Active
                 {
                     if (xl.InnerText == "null")
                         return false;
-                    if (File.Exists(Directory.GetCurrentDirectory() + "/" + xl.InnerText) == false)
+                    if (File.Exists(path + "" + xl.InnerText) == false)
                         return false;
                     return true;
                 }
@@ -279,10 +280,10 @@ namespace Launcher_Active
 
         public string GetFileName()
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/config.xml") == false)
-                return "Load:" + Directory.GetCurrentDirectory() + "/config.xml failed.";
+            if (File.Exists(path + "config.xml") == false)
+                return "Load:" + path + "config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(Directory.GetCurrentDirectory() + "/config.xml");
+            Config.Load(path + "config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {

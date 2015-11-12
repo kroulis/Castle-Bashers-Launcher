@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
+using Kroulis.Verify;
 
 namespace Castle_Bashers_Repair
 {
@@ -17,12 +17,9 @@ namespace Castle_Bashers_Repair
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
+            
         }
     }
-    public class Update
-    {
-        private int FileAmount;
 
-    }
 }
