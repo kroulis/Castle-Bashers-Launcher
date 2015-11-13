@@ -16,13 +16,6 @@ namespace Castle_Bashers_Bug_Report
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if(args.Length>0)
-            {
-                foreach(string s in args)
-                {
-
-                }
-            }
             Application.Run(new Main());
         }
     }

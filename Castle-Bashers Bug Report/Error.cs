@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.IO;
 
 namespace Kroulis.Error
 {
-
+    
     class Error
     {
         public static string GetErrorInfo(string ErrorID)
@@ -42,6 +44,67 @@ namespace Kroulis.Error
 
             return "Unknown Error. Please describe what happened and click submit.";
 
+        }
+    }
+
+    class ErrorData
+    {
+        private XmlDocument ErrorEX = new XmlDocument();
+        public string path = System.AppDomain.CurrentDomain.BaseDirectory;
+        private string ErrorID="";
+        private string LogInfo="";
+        private string Stack = "";
+        private string SystemInfo = "";
+
+        public bool ReadErrorData()
+        {
+            if (File.Exists(path + "/error.dat") == false)
+                return false;
+            ErrorEX.Load(path+"/error.dat");
+            //Create Root
+            XmlNode root = ErrorEX.SelectSingleNode("errorcatch");
+            if (root == null)
+                return false;
+            XmlNodeList list = root.ChildNodes;
+            foreach(XmlElement xl in list)
+            {
+                if(xl.Name=="eid")
+                {
+                    ErrorID = xl.InnerText;
+                    continue;
+                }
+                if (xl.Name == "log")
+                {
+                    LogInfo = xl.InnerText;
+                    continue;
+                }
+                if (xl.Name == "detail")
+                {
+                    Stack = xl.InnerText;
+                    continue;
+                }
+                if (xl.Name == "info")
+                {
+                    SystemInfo = xl.InnerText;
+                    continue;
+                }
+            }
+            return true;
+        }
+
+        public string GetErrorID()
+        {
+            return ErrorID;
+        }
+
+        public string GetDescribe()
+        {
+            return "Log info:\n" + LogInfo + "\nStack:\n"+Stack+"\nSystem info:\n"+SystemInfo;
+        }
+
+        public void DeleteData()
+        {
+            File.Delete(path + "/error.dat");
         }
     }
 }

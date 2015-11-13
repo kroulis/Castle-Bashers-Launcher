@@ -18,6 +18,7 @@ namespace Castle_Bashers_Bug_Report
     public partial class Main : Form
     {
         private Launcher LH=new Launcher();
+        private ErrorData ED = new ErrorData();
         public Main()
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace Castle_Bashers_Bug_Report
             if (str == "Submit Success.")
             {
                 MessageBox.Show("Submit Success. Thank you!", "Success");
+                ED.DeleteData();
                 Application.Exit();
             }
             else
@@ -90,6 +92,16 @@ namespace Castle_Bashers_Bug_Report
             else
             {
                 ErrorInfo.ForeColor = Color.Red;
+            }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if(ED.ReadErrorData())
+            {
+                ErrorID.Text = ED.GetErrorID();
+                ErrorID.ReadOnly = true;
+                Describe.Text = ED.GetDescribe();
             }
         }
     }
