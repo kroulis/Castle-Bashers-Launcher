@@ -39,6 +39,7 @@
             // 
             // currentp
             // 
+            this.currentp.BackColor = System.Drawing.SystemColors.Control;
             this.currentp.Location = new System.Drawing.Point(6, 584);
             this.currentp.Name = "currentp";
             this.currentp.Size = new System.Drawing.Size(617, 23);

@@ -14,21 +14,72 @@ namespace Launcher_Active
 {
     public interface ILauncher
     {
-        bool WriteConfig(int solution, int full_screen); //When there is no Config, Write the config.
-        bool ChangeConfig(int solution, int full_screen);//When the user changed the Config, use this method.
-        string GetSolution();// Get the Screen Solution from the config.
-        string GetFullScreenMode();// Get the Full Screen Mode from the config.
-        void CreateNewCharacter(string player_id, string class_id, string player_name);//When there is no character data, create a new player.
-        string GetPlayerID();// Get the Character ID from the config.
-        bool ImportData(int solution, int full_screen, string player_id, string filename);//When the user import the saved data, use this method.
-        bool CheckDataExist();// Check if the Save Data Exist
-        string GetFileName();// Get the save file name from the config
+        /// <summary>
+        /// When there is no Config, Write the config.
+        /// </summary>
+        /// <param name="solution">1:1280*720,2:1368*768,3:1920*1080</param>
+        /// <param name="full_screen">0:Normal,1:FullScreen</param>
+        /// <returns></returns>
+        bool WriteConfig(int solution, int full_screen); 
+        /// <summary>
+        /// When the user changed the Config, use this method.
+        /// </summary>
+        /// <param name="solution">1:1280*720,2:1368*768,3:1920*1080</param>
+        /// <param name="full_screen">0:Normal,1:FullScreen</param>
+        /// <returns></returns>
+        bool ChangeConfig(int solution, int full_screen);
+        /// <summary>
+        /// Get the Screen Solution from the config.
+        /// </summary>
+        /// <returns></returns>
+        string GetSolution();
+        /// <summary>
+        /// Get the Full Screen Mode from the config.
+        /// </summary>
+        /// <returns></returns>
+        string GetFullScreenMode();
+        /// <summary>
+        /// When there is no character data, create a new player.
+        /// </summary>
+        /// <param name="player_id">The player id you got from the website.</param>
+        /// <param name="class_id">The class you choose.</param>
+        /// <param name="player_name">The name the user input.</param>
+        void CreateNewCharacter(string player_id, string class_id, string player_name);
+        /// <summary>
+        /// Get the Character ID from the config.
+        /// </summary>
+        /// <returns></returns>
+        string GetPlayerID();
+        /// <summary>
+        /// When the user import the saved data, use this method.
+        /// </summary>
+        /// <param name="solution">1:1280*720,2:1368*768,3:1920*1080</param>
+        /// <param name="full_screen">0:Normal,1:FullScreen</param>
+        /// <param name="player_id">The player id you want to import.</param>
+        /// <param name="filename">The file path.</param>
+        /// <returns></returns>
+        bool ImportData(int solution, int full_screen, string player_id, string filename);
+        /// <summary>
+        /// Check if the Save Data Exist
+        /// </summary>
+        /// <returns></returns>
+        bool CheckDataExist();
+        /// <summary>
+        /// Get the save file name from the config
+        /// </summary>
+        /// <returns></returns>
+        string GetFileName();
+        /// <summary>
+        /// Get the Game's version.
+        /// </summary>
+        /// <returns></returns>
+        string GetVersion();
         
     }
     [ClassInterface(ClassInterfaceType.None)]
     public class Launcher : ILauncher
     {
-        private string path = System.AppDomain.CurrentDomain.BaseDirectory;
+        private string path = System.IO.Directory.GetCurrentDirectory()+"/";
         public bool WriteConfig(int solution,int full_screen)
         {
             XmlDocument Config = new XmlDocument();
@@ -294,5 +345,18 @@ namespace Launcher_Active
             }
             return "No Result.";
         }
+
+        public string GetVersion()
+        {
+            XmlDocument VS = new XmlDocument();
+            if (File.Exists(path + "version.xml") == false)
+            {
+                return "Load: " + path + "version.xml Failed.";
+            }
+            VS.Load(path + "version.xml");
+            XmlNode root = VS.SelectSingleNode("version");
+            return root.InnerText;
+        }
     }
+
 }

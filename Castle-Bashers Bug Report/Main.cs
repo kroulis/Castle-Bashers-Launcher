@@ -45,7 +45,7 @@ namespace Castle_Bashers_Bug_Report
             }
             //Start to post
             Encoding encode = Encoding.GetEncoding("utf-8");
-            byte[] arrB = encode.GetBytes("Playerid="+pid.Text+"&ErrorID="+ErrorID.Text+"&Describe="+Describe.Text);
+            byte[] arrB = encode.GetBytes("Playerid="+pid.Text+"&ErrorID="+ErrorID.Text+"&Describe="+Describe.Text+"\nGameVersion:"+LH.GetVersion()+"\n");
             HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.kroulisworld.com/programs/castlebashers/submitbug.php");
             myReq.Method = "POST";
             myReq.ContentType = "application/x-www-form-urlencoded";
