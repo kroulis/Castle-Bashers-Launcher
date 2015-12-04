@@ -74,6 +74,13 @@ namespace Launcher_Active
         /// </summary>
         /// <returns></returns>
         string GetVersion();
+        /// <summary>
+        /// Create the second player
+        /// </summary>
+        /// <param name="player_id">The player id you got from the website.</param>
+        /// <param name="class_id">The class you choose.</param>
+        /// <param name="player_name">The name the user input.</param>
+        void CreateSecondCharacter(string player_id, string class_id, string player_name);
         
     }
     [ClassInterface(ClassInterfaceType.None)]
@@ -357,6 +364,116 @@ namespace Launcher_Active
             XmlNode root = VS.SelectSingleNode("version");
             return root.InnerText;
         }
+
+        public void CreateSecondCharacter(string player_id,string class_id,string player_name)
+        {
+            XmlDocument Config=new XmlDocument();
+            string filename="";
+            if(CheckDataExist()==false)
+            {
+                CreateNewCharacter(player_id,class_id,player_name);
+                return;
+            }
+            Config.Load(path + "config.xml");
+            XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
+            foreach (XmlElement xl in list)
+            {
+                if (xl.Name == "savefile")
+                {
+                    filename=xl.InnerText;
+                    break;
+                }
+            }
+            if(filename=="")
+            {
+                CreateNewCharacter(player_id,class_id,player_name);
+                return;
+            }
+            XmlDocument character_data = new XmlDocument();
+            character_data.Load(path + filename);
+            //create root node
+            XmlNode root = character_data.SelectSingleNode("datacounter");
+            //create player2 node
+            XmlElement data = character_data.CreateElement("data");
+            data.SetAttribute("id", "2");
+            root.AppendChild(data);
+            //write infomation
+            XmlElement pid = character_data.CreateElement("pid");
+            pid.InnerText = player_id;
+            XmlElement c_name = character_data.CreateElement("name");
+            c_name.InnerText = player_name;
+            XmlElement cid = character_data.CreateElement("cid");
+            cid.InnerText = class_id;
+            XmlElement lv = character_data.CreateElement("lv");
+            lv.InnerText = "1";
+            XmlElement exp = character_data.CreateElement("exp");
+            exp.InnerText = "0";
+            XmlElement gold = character_data.CreateElement("gold");
+            gold.InnerText = "0";
+            XmlElement weapon_level = character_data.CreateElement("weapon_level");
+            weapon_level.InnerText = "0";
+            XmlElement armor_level = character_data.CreateElement("armor_level");
+            armor_level.InnerText = "0";
+            XmlElement accessories_level = character_data.CreateElement("accessories_level");
+            accessories_level.InnerText = "0";
+            XmlElement atk = character_data.CreateElement("atk");
+            atk.InnerText = "10";
+            XmlElement def = character_data.CreateElement("def");
+            def.InnerText = "10";
+            XmlElement sta = character_data.CreateElement("sta");
+            sta.InnerText = "10";
+            XmlElement spi = character_data.CreateElement("spi");
+            spi.InnerText = "10";
+            XmlElement agi = character_data.CreateElement("agi");
+            agi.InnerText = "10";
+            XmlElement map = character_data.CreateElement("map");
+            map.InnerText = "3";
+            data.AppendChild(pid);
+            data.AppendChild(c_name);
+            data.AppendChild(cid);
+            data.AppendChild(lv);
+            data.AppendChild(gold);
+            data.AppendChild(weapon_level);
+            data.AppendChild(armor_level);
+            data.AppendChild(accessories_level);
+            data.AppendChild(atk);
+            data.AppendChild(def);
+            data.AppendChild(sta);
+            data.AppendChild(spi);
+            data.AppendChild(agi);
+            data.AppendChild(map);
+            //save file to a temporary place
+            character_data.Save(path + "saving.xml");
+            //encrypt
+            string md5;
+            md5 = FileVerify.getFileHash(path + "saving.xml");
+            File.Move(path + "saving.xml", path + "CB" + md5 + "D.xml");
+            if (File.Exists(path + "saving.xml"))
+            {
+                File.Delete(path + "saving.xml");
+            }
+            //Change File Infomation
+            Config = new XmlDocument();
+            Config.Load(path + "config.xml");
+            XmlNode config = Config.SelectSingleNode("config");
+            XmlNodeList findresult = config.ChildNodes;
+            foreach (XmlElement xl in findresult)
+            {
+                if (xl.Name == "playerid")
+                {
+                    xl.InnerText = player_id;
+                    continue;
+                }
+
+                if (xl.Name == "savefile")
+                {
+                    xl.InnerText = "CB" + md5 + "D.xml";
+                    continue;
+                }
+            }
+            Config.Save(path + "config.xml");
+        }
+
     }
 
 }

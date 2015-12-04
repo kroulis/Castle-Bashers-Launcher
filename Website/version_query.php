@@ -1,9 +1,7 @@
 <?php
 /*
-	Kroulis Classmate Book --Version Query
-	For:1.MainVersion
-		2.PackageVersion
-		
+	Castle Bashers --Version Query
+	For:1.MainVersion		
 */
 	session_start();
 	$qid=$_REQUEST['qid'];

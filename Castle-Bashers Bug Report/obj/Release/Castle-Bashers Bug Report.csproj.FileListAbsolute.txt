@@ -9,3 +9,7 @@ E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers
 E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\obj\Release\Castle-Bashers Bug Report.csproj.GenerateResource.Cache
 E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\obj\Release\Castle-Bashers Bug Report.exe
 E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\obj\Release\Castle-Bashers Bug Report.pdb
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\bin\Release\Castle-Bashers Bug Report.exe.manifest
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\bin\Release\Castle-Bashers Bug Report.application
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\obj\Release\Castle-Bashers Bug Report.exe.manifest
+E:\Kroulis\deanza\Castle-Bashers\Launcher\Castle-Bashers Launcher\Castle-Bashers Bug Report\obj\Release\Castle-Bashers Bug Report.application

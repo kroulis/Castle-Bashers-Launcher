@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.label1 = new System.Windows.Forms.Label();
             this.pid = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -146,6 +147,7 @@
             this.Controls.Add(this.pid);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Castle-Bashers Bug Report";
             this.Load += new System.EventHandler(this.Main_Load);
