@@ -86,7 +86,7 @@ namespace Launcher_Active
     [ClassInterface(ClassInterfaceType.None)]
     public class Launcher : ILauncher
     {
-        private string path = System.IO.Directory.GetCurrentDirectory()+"/";
+        private string path = System.IO.Directory.GetCurrentDirectory()+"\\";
         public bool WriteConfig(int solution,int full_screen)
         {
             XmlDocument Config = new XmlDocument();
@@ -111,8 +111,8 @@ namespace Launcher_Active
             XmlNode savefile = Config.CreateElement("savefile");
             savefile.InnerText = "null";
             root.AppendChild(savefile);
-            Config.Save(path + "config.xml");
-            if(File.Exists(path + "config.xml"))
+            Config.Save(path + "Castle-Bashers_Data\\config.xml");
+            if(File.Exists(path + "Castle-Bashers_Data\\config.xml"))
             {
                 return true;
             }
@@ -123,10 +123,10 @@ namespace Launcher_Active
         }
         public bool ChangeConfig(int solution,int full_screen)
         {
-            if (File.Exists(path + "config.xml") == false)
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
                 return false;
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -141,15 +141,15 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(path + "config.xml");
+            Config.Save(path + "Castle-Bashers_Data\\config.xml");
             return true;
         }
         public string GetSolution()
         {
-            if (File.Exists(path + "config.xml") == false)
-                return "Load:" + path + "config.xml failed.";
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
+                return "Load:" + path + "Castle-Bashers_Data\\config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -163,10 +163,10 @@ namespace Launcher_Active
 
         public string GetFullScreenMode()
         {
-            if (File.Exists(path + "config.xml") == false)
-                return "Load:" + path + "config.xml failed.";
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
+                return "Load:" + path + "Castle-Bashers_Data\\config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -180,10 +180,10 @@ namespace Launcher_Active
 
         public string GetPlayerID()
         {
-            if (File.Exists(path + "config.xml") == false)
-                return "Load:" + path + "config.xml failed.";
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
+                return "Load:" + path + "Castle-Bashers_Data\\config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -260,14 +260,14 @@ namespace Launcher_Active
             //encrypt
             string md5;
             md5 = FileVerify.getFileHash(path + "saving.xml");
-            File.Move(path + "saving.xml", path + "CB" + md5 + "D.xml");
+            File.Move(path + "saving.xml", path + "Castle-Bashers_Data\\CB" + md5 + "D.xml");
             if (File.Exists(path + "saving.xml"))
             {
                 File.Delete(path + "saving.xml");
             }
             //Change File Infomation
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNode config = Config.SelectSingleNode("config");
             XmlNodeList findresult = config.ChildNodes;
             foreach (XmlElement xl in findresult)
@@ -284,7 +284,7 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(path + "config.xml");
+            Config.Save(path + "Castle-Bashers_Data\\config.xml");
 
 
         }
@@ -294,9 +294,9 @@ namespace Launcher_Active
             if(File.Exists(path + ""+filename)==false)
                 return false;
             XmlDocument Config = new XmlDocument();
-            if (File.Exists(path + "config.xml") == false)
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
                 WriteConfig(solution, full_screen);
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -311,16 +311,16 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(path + "config.xml");
+            Config.Save(path + "Castle-Bashers_Data\\config.xml");
             return true;
         }
 
         public bool CheckDataExist()
         {
-            if (File.Exists(path + "config.xml") == false)
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
                 return false;
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -328,7 +328,7 @@ namespace Launcher_Active
                 {
                     if (xl.InnerText == "null")
                         return false;
-                    if (File.Exists(path + "" + xl.InnerText) == false)
+                    if (File.Exists(path + "Castle-Bashers_Data\\" + xl.InnerText) == false)
                         return false;
                     return true;
                 }
@@ -338,10 +338,10 @@ namespace Launcher_Active
 
         public string GetFileName()
         {
-            if (File.Exists(path + "config.xml") == false)
-                return "Load:" + path + "config.xml failed.";
+            if (File.Exists(path + "Castle-Bashers_Data\\config.xml") == false)
+                return "Load:" + path + "Castle-Bashers_Data\\config.xml failed.";
             XmlDocument Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -374,7 +374,7 @@ namespace Launcher_Active
                 CreateNewCharacter(player_id,class_id,player_name);
                 return;
             }
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNodeList list = Config.SelectSingleNode("config").ChildNodes;
             foreach (XmlElement xl in list)
             {
@@ -390,7 +390,7 @@ namespace Launcher_Active
                 return;
             }
             XmlDocument character_data = new XmlDocument();
-            character_data.Load(path + filename);
+            character_data.Load(path + "Castle-Bashers_Data\\" + filename);
             //create root node
             XmlNode root = character_data.SelectSingleNode("datacounter");
             //create player2 node
@@ -447,14 +447,14 @@ namespace Launcher_Active
             //encrypt
             string md5;
             md5 = FileVerify.getFileHash(path + "saving.xml");
-            File.Move(path + "saving.xml", path + "CB" + md5 + "D.xml");
+            File.Move(path + "saving.xml", path + "Castle-Bashers_Data\\CB" + md5 + "D.xml");
             if (File.Exists(path + "saving.xml"))
             {
                 File.Delete(path + "saving.xml");
             }
             //Change File Infomation
             Config = new XmlDocument();
-            Config.Load(path + "config.xml");
+            Config.Load(path + "Castle-Bashers_Data\\config.xml");
             XmlNode config = Config.SelectSingleNode("config");
             XmlNodeList findresult = config.ChildNodes;
             foreach (XmlElement xl in findresult)
@@ -471,7 +471,7 @@ namespace Launcher_Active
                     continue;
                 }
             }
-            Config.Save(path + "config.xml");
+            Config.Save(path + "Castle-Bashers_Data\\config.xml");
         }
 
     }

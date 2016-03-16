@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Castle-Bashers Bug Report.exe" size="51136">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Castle-Bashers Bug Report.exe" size="50624">
       <assemblyIdentity name="Castle-Bashers Bug Report" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>E3JXWdFUWlhRyNItNSMioOu/AE4f+MalC8+cS9/EwOs=</dsig:DigestValue>
+        <dsig:DigestValue>l8zU1bLkwlCf2Oxzn4i1ptvx5UwuTgyypuLR1a5tY4s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8eDdtmFAj08XM1PnoGw+G/IN1sWqLuCUqDuLyjDIg1E=</dsig:DigestValue>
+        <dsig:DigestValue>ofoQmt0Barrq06h2tEGdG8LsllNPNJo0busVmk1pwas=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
